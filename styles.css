@@ -16,5 +16,8 @@ button {
 .container {
     width: 912px;
     height: 912px;
-    border: 1px solid black;
+    outline-offset: 2px;
+    outline: 1px dashed blue;
+    display: flex;
+    flex-wrap: wrap;
 }
