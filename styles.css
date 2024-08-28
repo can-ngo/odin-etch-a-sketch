@@ -3,6 +3,8 @@
 }
 
 body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #85C8DF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11,6 +13,7 @@ body {
 
 button {
     margin-bottom: 10px;
+    font-size: 1.2em;
 }
 
 .container {
