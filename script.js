@@ -11,6 +11,7 @@ reloadBackground();
 drawGrid(pixels, pixelWidth);
 
 btnSize.addEventListener('click', () => {
+    location.href = location.href;
     reloadBackground();
     board.replaceChildren();
     pixels = prompt('Choose between 10 - 400');
@@ -24,6 +25,7 @@ btnSize.addEventListener('click', () => {
 btnReset.addEventListener('click', () => {
     board.replaceChildren();
     drawGrid(pixels, pixelWidth);
+    location.href = location.href;
     reloadBackground();
 })
 
@@ -32,15 +34,9 @@ board.addEventListener('mousemove', e => {
 })
 
 function reloadBackground () {
-    fetch(catUrl)
-    .then(res => res.blob())
-    .then(blob => {
-        const imgUrl = URL.createObjectURL(blob);
-        board.style.backgroundImage = `url(${imgUrl})`;
-        board.style.backgroundSize = 'cover';
-        board.style.backgroundPosition = 'center';
-    })
-    .catch(error => console.log('Error fetching the image:', error))
+    board.style.backgroundImage = `url(${catUrl})`;
+    board.style.backgroundSize = 'cover';
+    board.style.backgroundPosition = 'center'; 
 }
 
 function drawGrid (inputPixels, inputPixelWidth) {
