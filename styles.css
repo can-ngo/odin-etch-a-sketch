@@ -1,3 +1,7 @@
+:root {
+    --board-width-height: 912px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -17,10 +21,42 @@ button {
 }
 
 .container {
-    width: 912px;
-    height: 912px;
+    width: var(--board-width-height);
+    height: var(--board-width-height);
     outline-offset: 2px;
     outline: 1px dashed blue;
     display: flex;
     flex-wrap: wrap;
+}
+
+/* ---------- iPhone X ----------- */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  { 
+
+body {
+    height: 100vh;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+.container {
+    width: calc(var(--board-width-height) / 2.4);
+    height: calc(var(--board-width-height) / 2.4);
+    outline-offset: 2px;
+    outline: 1px dashed blue;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
 }
