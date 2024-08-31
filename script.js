@@ -46,4 +46,7 @@ board.addEventListener('mousemove', e => {
     e.target.style.backgroundColor = '';
 })
 
+board.addEventListener('touchmove', e => {
+    e.target.style.backgroundColor = '';
+})
 
