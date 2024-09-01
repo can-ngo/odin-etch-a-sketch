@@ -4,12 +4,22 @@ const board = document.querySelector('.container');
 const boardWidth = board.offsetWidth; // 912 by default
 let pixels = 16 //by Default
 let pixelWidth = boardWidth / pixels; // 57 by default
+const catAPI = `https://api.thecatapi.com/v1/images/search`
+
 
 function reloadBackground () {
-    let catUrl = 'https://cataas.com/cat'
-    board.style.backgroundImage = `url(${catUrl}?timestamp=${new Date().getTime()}`;
-    board.style.backgroundSize = 'cover';
-    board.style.backgroundPosition = 'center'; 
+    // let catUrl = 'https://cataas.com/cat'
+    // board.style.backgroundImage = `url(${catUrl}?timestamp=${new Date().getTime()}`;
+    fetch(catAPI)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data[0].url)
+        board.style.backgroundImage = `url(${data[0].url}`;
+        board.style.backgroundSize = 'cover';
+        board.style.backgroundPosition = 'center'; 
+    })
+    .catch(error => { console.log(error) });
+    
 }
 
 function drawGrid (inputPixels, inputPixelWidth) {
